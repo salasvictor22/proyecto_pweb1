@@ -1,0 +1,225 @@
+body{
+    background-color: #f1e7bf;
+}
+header {
+    background-color: #0e21d2bf;
+    color: #fff;
+    margin: 30px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 50px;
+    font-family: 'Afacad', sans-serif;
+    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Kalnia', serif;
+    font-family: 'Lemon', serif;
+}
+nav ul {
+    list-style-type: none;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+nav ul li {
+    display: inline;
+    margin-right: 2%;
+}
+nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+nav a:hover {
+    color: #ffcc00;
+}
+
+#contenedor{
+
+    display: flex;
+    max-width: auto;
+    margin: auto;
+    
+}
+#submenu{
+    background-color: #ffcc00;
+    display: inline-block;
+    max-width: auto;
+    border-radius: 40px;
+    position: fixed; /* Fijamos el submenu */
+    padding-right: 33px;
+    
+}
+
+#submenu div{
+    text-align: center;
+    padding: 20px;
+    margin:12px;
+    list-style: none;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-left: 20px;
+}
+
+#submenu nav div:hover li {
+    color: #fff; 
+    cursor: pointer; 
+}
+
+#todos{
+
+    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 25px; 
+    max-width: 1450px; 
+    margin: 0 auto; 
+    margin-top: 10px;
+    margin-left: 290px;
+}
+.productos{
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    height: 365px;
+    border-radius: 8px;
+    text-align: center;
+}
+img{
+    width: 180px;
+    height: 185px;
+    padding: 10px;
+
+}
+h3{
+	color: #079cff;
+    font-size: 23px;
+}
+
+
+
+.botones {
+    margin-top: 15px;
+}
+
+.botones button {
+    background-color: #1a7708;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 17px;
+    margin-right: 5px;
+    cursor: pointer;
+    border-radius: 15px;
+}
+
+.botones button.carrito {
+    background-color: #0969cf;
+}
+
+.botones button:hover {
+    background-color: #1ba322;
+}
+
+.botones button.carrito:hover {
+    background-color: #0056b3;
+}
+
+.comprar {
+    background-color: white !important;
+    color: white !important; 
+    border: 1px solid white !important; 
+    padding: 1px 20px !important; 
+    cursor: pointer !important;
+}
+
+.comprar:hover {
+    background-color: white !important;
+    color: white !important;
+}
+#carrito-contenedorc {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+#tabla-carrito {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+#tabla-carrito th, #tabla-carrito td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+#tabla-carrito th {
+    background-color: #f2f2f2;
+}
+
+#productos-carrito td {
+    vertical-align: middle;
+}
+
+#total {
+    margin-top: 20px;
+    text-align: right;
+}
+
+#total-precio {
+    font-weight: bold;
+    color: #e44d26;
+}
+.modal {
+    display: none; /* Ocultar inicialmente la ventana modal */
+    position: fixed; /* Posición fija en la ventana */
+    z-index: 1; /* Hacer que la ventana modal esté por encima del contenido */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Habilitar el desplazamiento si el contenido es demasiado grande */
+    background-color: rgb(0,0,0); /* Fondo negro semi-transparente */
+    background-color: rgba(0,0,0,0.4); /* Fondo negro semi-transparente */
+}
+
+/* Contenido de la ventana modal */
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto; /* 10% del espacio superior y centrado horizontalmente */
+    padding: 15px;
+    border: 1px solid #888;
+    width: 30%; /* 60% del ancho de la ventana */
+    height: 50%;
+    text-align: center; /* Centrar el contenido horizontalmente */
+}
+
+/* Estilos para el botón de cerrar */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Estilos para la imagen del código QR */
+#codigo-qr {
+    max-width: 100%; /* Ajusta el ancho máximo de la imagen al 100% del espacio disponible */
+    max-height: 100%; /* Ajusta la altura máxima de la imagen al 100% del espacio disponible */
+    width: auto; /* Ancho automático para mantener la proporción de aspecto */
+    height: auto; /* Altura automática para mantener la proporción de aspecto */
+}

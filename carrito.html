@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Afacad:wght@400;500&family=Josefin+Sans&family=Kalnia:wght@300&family=Lemon&display=swap" rel="stylesheet">
+    <title>Carrito de Compras</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <header>
+        <h1>Carrito de Compras</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="cgi-bin/productos1.pl">Productos</a></li>
+                <li><a href="carrito.html">Carrito</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="contenedorc">
+        <div id="carrito-contenedorc">
+            <h2>Resumen de la Compra</h2>
+            <table id="tabla-carrito">
+                <thead>
+                    <tr>
+                        <th>Producto</th>
+                        <th>Cantidad</th>
+                        <th>Precio Unitario</th>
+                        <th>Subtotal</th>
+                        <th>Eliminar</th>
+                    </tr>
+                </thead>
+                <tbody id="productos-carrito">
+                    <!-- Aquí se mostrarán los productos agregados al carrito -->
+                </tbody>
+            </table>
+            <div id="total">
+                <p>Total: <span id="total-precio">S/ 0.00</span></p>
+            </div>
+            
+            <!-- Agregamos el formulario para comprar -->
+            <form id="formulario-compra">
+                <button type="button" onclick="mostrarQR()">Comprar</button>
+                <p id="mensaje-compra" style="display: none;">Su compra se realizó con éxito.</p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Contenido de la ventana modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="cerrarModal()">&times;</span>
+            <img id="codigo-qr" src="img/codigoqr.jpeg" alt="Código QR">
+        </div>
+    </div>
+
+    <script src="carrito.js"></script>
+
+    <script>
+    // Función para mostrar la ventana modal con el código QR
+    function mostrarQR() {
+        var modal = document.getElementById("myModal");
+        modal.style.display = "block";
+    }
+
+    // Función para cerrar la ventana modal
+    function cerrarModal() {
+		var modal = document.getElementById("myModal");
+		modal.style.display = "none";
+    
+		// Luego de cerrar la ventana modal, mostrar el mensaje de compra exitosa
+		document.getElementById("mensaje-compra").style.display = "block";
+
+		// Limpiar el carrito
+		limpiarCarrito();
+
+		// Mostrar el carrito vacío
+		mostrarCarrito();
+	}
+
+	function limpiarCarrito() {
+		// Obtener la referencia a la tabla y su cuerpo
+		var tabla = document.getElementById("tabla-carrito");
+		var tbody = document.getElementById("productos-carrito");
+
+		// Borrar todas las filas del cuerpo
+		tbody.innerHTML = "";
+
+		// Actualizar el total a cero
+		document.getElementById("total-precio").textContent = "S/ 0.00";
+
+		// Limpiar el carrito en localStorage
+		localStorage.removeItem("carrito");
+	}
+    </script>
+</body>
+</html>
